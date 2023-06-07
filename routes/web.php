@@ -17,14 +17,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => 'api'], function($router) {
-    $router->get('users', 'userController@showUsers');
 
-    $router->get('users/{id}', 'userController@showUser');
+$router->get('/users2',['uses' => 'UserController2@index']);                    //get all users
+$router->post('/users2',['uses' => 'UserController2@add']);                     //add  users
+$router->get('/users2/{id}',['uses' => 'UserController2@show']);                //get users by id
+$router->put('/update/users2/{id}',['uses' => 'UserController2@updateUser']);   //UPDATE users by id
+$router->delete('/users2/{id}',['uses' => 'UserController2@deleteUser']);       //delete user record
 
-    $router->post('users', 'userController@addUser');
 
-    $router->delete('users/{id}', 'userController@deleteUser');
+// USERJOB ROUTES
 
-    $router->patch('/users/{id}', 'userController@updateUser');
-});
+$router->get('/userjob2',['uses' => 'UserJobController@index']);             //get all jobs
+$router->get('/userjob2/{id}',['uses' => 'UserJobController@show']);            //get jobs by id
