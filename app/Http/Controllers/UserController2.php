@@ -46,7 +46,7 @@ Class UserController2 extends Controller {
         ];
 
         $this->validate($request,$rules);
-        $userjob = UserJob::findOrFail($request->jobid);
+        //$userjob = UserJob::findOrFail($request->jobid);
         $users = User::create($request->all());
         return $this -> successResponse($users, Response::HTTP_CREATED);
     }
