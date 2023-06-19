@@ -21,7 +21,7 @@ $router->get('/', function () use ($router) {
 $router->get('/users2',['uses' => 'UserController2@index']);                    //get all users
 $router->post('/users2',['uses' => 'UserController2@add']);                     //add  users
 $router->get('/users2/{id}',['uses' => 'UserController2@show']);                //get users by id
-$router->put('/update/users2/{id}',['uses' => 'UserController2@updateUser']);   //UPDATE users by id
+$router->put('/users2/{id}',['uses' => 'UserController2@updateUser']);   //UPDATE users by id
 $router->delete('/users2/{id}',['uses' => 'UserController2@deleteUser']);       //delete user record
 
 
